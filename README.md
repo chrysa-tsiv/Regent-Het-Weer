@@ -6,6 +6,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+If the widget is not loading, check the console for the following error:
+"You have exceeded the MONTHLY quota for Requests Today on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/standingapi-standingapi-default/api/bestweather"
+As this API has a limit of 50 hits per month, you might need to sign in and create a new key and replace the XRapidAPIKeyHeaderValue variable in the environment.ts and environment.prod.ts files.
+
 <img width="951" alt="image" src="https://user-images.githubusercontent.com/58602405/185516050-f4c7c5c2-4866-41c1-a9ae-62888a96210c.png">
 
 ## Code scaffolding
