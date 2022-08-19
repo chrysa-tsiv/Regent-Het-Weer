@@ -9,7 +9,7 @@ export const environment = {
   XRapidAPIHostHeaderName: 'X-RapidAPI-Host',
   XRapidAPIHostHeaderValue: 'bestweather.p.rapidapi.com',
   XRapidAPIKeyHeaderName: 'X-RapidAPI-Key',
-  XRapidAPIKeyHeaderValue: '8fd9de855cmsh448cc5640e05e90p19301ajsn7f057a0b008c', 
+  XRapidAPIKeyHeaderValue: '7f98f44f43msh1e4e1119291a17ep13b42fjsn30a0e5a4a2bc', 
   /* the key needs to be updated if there is an error "You have exceeded the MONTHLY quota for Requests Today on your
   current plan, BASIC. Upgrade your plan at https://rapidapi.com/standingapi-standingapi-default/api/bestweather".
   this api only allows 50 hits per month, so you need to go to their page, sign in, create a new key and replace the 
