@@ -1,0 +1,126 @@
+<div class="search">
+    <form #form="ngForm" (submit)="onSubmit()">
+        <input type="text" 
+               placeholder="Where in the world are you?"
+               name="city"
+               [(ngModel)]="cityName"/>
+    </form>
+</div>
+
+<div class="container" *ngIf="weatherData"> 
+    <div *ngIf="detailedResponse"
+         class="upper-data">
+        <img *ngIf="detailedResponse[0].precip > 0"
+        src="../assets/images/rain.jpeg"
+        alt="rain"/>
+      <img *ngIf="detailedResponse[0].precip <= 0"
+           src="../assets/images/sun.jpeg"
+           alt="sunny"/>
+  
+      <div class="weather-data">
+        <div class="location">
+          {{ weatherData.resolvedAddress }}
+        </div>
+        <div *ngIf="detailedResponse"
+            class="temperature">
+          {{ detailedResponse[0].temp | number: '1.0-0' }}°C
+        </div>
+      </div>
+  
+    </div>
+    <div class="lower-data">
+      <div class="more-info-label">
+       More information about today's weather:
+      </div>
+      <div class="more-info-container">
+  
+        <div class="info-block">
+          <div class="info-block-label">
+            <img
+              src="../assets/images/temp-min.png" 
+              alt="minimum temperature" />
+            <span>Min</span>
+          </div>
+          <div *ngIf="detailedResponse"
+               class="info-block-value">
+            {{ detailedResponse[0].tempmin | number: '1.0-0' }}°C
+          </div>
+        </div>
+  
+        <div class="info-block">
+          <div class="info-block-label">
+            <img
+              src="../assets/images/temp-max.png" 
+              alt="maximum temperature" />
+            <span>Max</span>
+          </div>
+          <div *ngIf="detailedResponse"
+               class="info-block-value">
+            {{ detailedResponse[0].tempmax | number: '1.0-0' }}°C
+          </div>
+        </div>
+
+        <div *ngIf="detailedResponse"
+             class="info-block" >
+            <div class="info-block-label">
+                <img *ngIf="detailedResponse[0].cloudcover > 0"
+                     src="../assets/images/cloudy.png" 
+                     alt="clouds" />
+                <img *ngIf="detailedResponse[0].cloudcover <= 0"
+                     src="../assets/images/sun.png" 
+                     alt="clouds" />
+              <span>Sky</span>
+            </div>
+            <div *ngIf="detailedResponse[0].cloudcover > 0"
+                 class="info-block-value">
+                 Cloudy
+            </div>
+            <div *ngIf="detailedResponse[0].cloudcover <= 0"
+                class="info-block-value">
+                Clear
+           </div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-block-label">
+              <img
+                src="../assets/images/rainy.png" 
+                alt="rain" />
+              <span>Rain</span>
+            </div>
+            <div *ngIf="detailedResponse"
+                 class="info-block-value">
+              {{ detailedResponse[0].precipprob | number: '1.0-0' }}%
+            </div>
+          </div>
+  
+        <div class="info-block">
+          <div class="info-block-label">
+            <img
+              src="../assets/images/humidity.png" 
+              alt="minimum temperature" />
+            <span>Humidity</span>
+          </div>
+          <div *ngIf="detailedResponse"
+               class="info-block-value">
+               {{ detailedResponse[0].humidity }}%
+          </div>
+        </div>
+  
+        <div class="info-block">
+          <div class="info-block-label">
+            <img
+              src="../assets/images/wind.png" 
+              alt="minimum temperature" />
+            <span>Wind</span>
+          </div>
+          <div *ngIf="detailedResponse"
+               class="info-block-value">
+            {{ detailedResponse[0].windspeed }}km/h
+          </div>
+        </div>
+  
+      </div>
+  
+    </div>
+  </div>
