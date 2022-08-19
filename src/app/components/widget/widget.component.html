@@ -1,3 +1,4 @@
+<!-- search bar for the user to type the city they want the weather for -->
 <div class="search">
     <form #form="ngForm" (submit)="onSubmit()">
         <input type="text" 
@@ -7,6 +8,9 @@
     </form>
 </div>
 
+<!-- widget to display selected city, current temperature,
+    minimum and maximum temperature of the day, sky condition,
+    rain probability, humidity level and wind speed -->
 <div class="container" *ngIf="weatherData"> 
     <div *ngIf="detailedResponse"
          class="upper-data">

@@ -22,19 +22,19 @@ export class WidgetComponent implements OnInit {
     this.cityName = '';
   }
 
+  // submit function for the search bar
   onSubmit() {
     this.getWeatherData(this.cityName);
     this.cityName = '';
   }
 
+  // api response to be used for displaying data 
   private getWeatherData(cityName: string) {
     this.weatherService.getWeatherData(cityName, "today")
     .subscribe({
       next: (response) => {
         this.weatherData = response;
         this.detailedResponse = response.days;
-        // console.log("this.weatherData.currentConditions", this.weatherData.currentConditions);
-        // console.log("this.weatherData.days", this.weatherData.days[0].tempmax);
         console.log("detailedResponse", this.detailedResponse[0]);
       } 
     });

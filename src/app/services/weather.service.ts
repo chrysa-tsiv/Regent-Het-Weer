@@ -15,6 +15,8 @@ export class WeatherService {
 
   }
 
+  // connecting to the api url to get today's temperature for the requested city in the metric system
+
   getWeatherData(city: string, date: string): Observable<WeatherData> {
     return this.http.get<WeatherData>(`${env.BASE_URL}/${city}/today?unitGroup=metric'`, {
       headers: new HttpHeaders()
